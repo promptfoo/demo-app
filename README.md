@@ -29,7 +29,7 @@ For development with auto-reload:
 npm run dev
 ```
 
-The server will start on port 3000 (or the port specified in your `.env` file).
+The server will start on port 4000 (or the port specified in your `.env` file).
 
 ## API Endpoints
 
