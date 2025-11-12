@@ -1,6 +1,6 @@
-# Demo App - Express ChatGPT Chat API
+# Demo App - ChatGPT Wrapper Chat API
 
-A basic Express application with a `/chat` endpoint that forwards messages to ChatGPT's API.
+This is a basic Express application with a `/chat` endpoint that forwards messages to ChatGPT's API.  The purpose is to demonstrate Promptfoo's capabilities including identifying and remediating vulnerabilities.  The system prompt is intentionally weak.  This is not intended for production use in any way.
 
 ## Setup
 
