@@ -1,0 +1,20 @@
+{
+  "name": "demo-app",
+  "version": "1.0.0",
+  "description": "Express application with ChatGPT chat endpoint",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1",
+    "openai": "^4.20.1"
+  }
+}
+
