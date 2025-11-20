@@ -15,6 +15,7 @@ env:
   OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
   PROMPTFOO_CACHE_PATH: ~/.cache/promptfoo
   PORT: 4000
+  PROMPTFOO_REMOTE_GENERATION_URL: ${{ vars.PROMPTFOO_REMOTE_GENERATION_URL }}
 
 jobs:
   evaluate:
