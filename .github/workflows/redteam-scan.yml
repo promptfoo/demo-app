@@ -37,6 +37,11 @@ jobs:
           sleep 10
           echo "Dev server started in background"
 
+      - name: Health check
+        run: |
+          curl -f http://localhost:${{ env.PORT }}/health || exit 1
+          echo "✅ Health check passed"
+
       - name: Install dependencies
         run: |
           npm install -g promptfoo@latest
@@ -55,7 +60,7 @@ jobs:
 
       - name: Run redteam
         run: |
-          promptfooredteam run -c "$SCAN_TEMPLATE_ID" -t "$TARGET_ID" \
+          promptfoo redteam run -c "$SCAN_TEMPLATE_ID" -t "$TARGET_ID" \
             -c promptfooconfig.yaml \
             --share \
             -o results.json \
