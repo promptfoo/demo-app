@@ -60,6 +60,10 @@ jobs:
         run: |
           promptfoo auth login --host "$PROMPTFOO_HOST" --api-key "$PROMPTFOO_API_KEY"
 
+      - name: Promptfoo Remote Generation Login
+        run: |
+          echo "PROMPTFOO_REMOTE_GENERATION_URL: $PROMPTFOO_REMOTE_GENERATION_URL"
+
       - name: Run redteam
         run: |
           promptfoo redteam run -c "$SCAN_TEMPLATE_ID" -t "$TARGET_ID" -o results.json -o report.html
