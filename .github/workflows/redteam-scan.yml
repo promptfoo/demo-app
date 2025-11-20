@@ -18,6 +18,7 @@ env:
 
 jobs:
   evaluate:
+    name: Lite Redteam Scan
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -62,7 +63,6 @@ jobs:
         run: |
           promptfoo redteam run -c "$SCAN_TEMPLATE_ID" -t "$TARGET_ID" \
             -c promptfooconfig.yaml \
-            --share \
             -o results.json \
             -o report.html
 
