@@ -61,7 +61,7 @@ jobs:
 
       - name: Run redteam
         run: |
-          promptfoo redteam run -c "$SCAN_TEMPLATE_ID" -t "$TARGET_ID" -c promptfooconfig.yaml -o results.json -o report.html
+          promptfoo redteam run -c "$SCAN_TEMPLATE_ID" -t "$TARGET_ID" -o results.json -o report.html
 
       - name: Check quality gate
         run: |
