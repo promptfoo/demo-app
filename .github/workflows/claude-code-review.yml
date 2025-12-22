@@ -12,18 +12,22 @@ on:
 
 jobs:
   claude-review:
-    # Optional: Filter by PR author
-    # if: |
-    #   github.event.pull_request.user.login == 'external-contributor' ||
-    #   github.event.pull_request.user.login == 'new-developer' ||
-    #   github.event.pull_request.author_association == 'FIRST_TIME_CONTRIBUTOR'
+    # Security: Only run on PRs from the same repository (not forks)
+    # and only for users with write access
+    if: |
+      github.event.pull_request.head.repo.full_name == github.repository && (
+        github.event.pull_request.author_association == 'OWNER' ||
+        github.event.pull_request.author_association == 'MEMBER' ||
+        github.event.pull_request.author_association == 'COLLABORATOR'
+      )
 
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      pull-requests: read
-      issues: read
-      id-token: write
+      # Principle of least privilege: grant only what's needed
+      contents: read # Required to checkout and read code
+      pull-requests: write # Required for Claude to comment on PRs
+      issues: read # Required to read issue context
+      id-token: write # Required for OIDC authentication
 
     steps:
       - name: Checkout repository
