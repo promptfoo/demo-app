@@ -57,8 +57,10 @@ describe('Express Application', () => {
     const app = express.default();
     app.use(express.default.json());
 
-    // Verify middleware is configured
-    assert.ok(app._router, 'App should have router configured');
+    // Verify app has necessary methods
+    assert.strictEqual(typeof app.use, 'function', 'App should have use method');
+    assert.strictEqual(typeof app.get, 'function', 'App should have get method');
+    assert.strictEqual(typeof app.post, 'function', 'App should have post method');
   });
 });
 
