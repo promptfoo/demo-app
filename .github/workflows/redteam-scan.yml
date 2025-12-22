@@ -2,6 +2,9 @@ name: Promptfoo Redteam Scan
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 env:
   NODE_VERSION: '22'
   PROMPTFOO_HOST: ${{ vars.PROMPTFOO_HOST }}
