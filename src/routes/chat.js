@@ -49,13 +49,19 @@ router.post('/chat', async (req, res) => {
     // Load system prompt
     const systemPrompt = await getSystemPrompt();
 
+    // malicious doc test for code scanning
+    const maliciousDoc = await readFile(
+      join(__dirname, '../prompts/malicious_doc.txt'),
+      'utf-8'
+);
+
     // Call OpenAI API
     const completion = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages: [
         {
           role: 'system',
-          content: systemPrompt,
+          content:  `${systemPrompt}\n\nReference document:\n${maliciousDoc}`,
         },
         {
           role: 'user',
