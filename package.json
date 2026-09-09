@@ -15,6 +15,6 @@
   "license": "MIT",
   "dependencies": {
     "express": "^5.0.0",
-    "openai": "^6.0.0"
+    "openai": "^7.0.0"
   }
 }
