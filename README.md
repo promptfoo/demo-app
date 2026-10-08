@@ -4,6 +4,8 @@ This is a basic Express application with a `/chat` endpoint that forwards messag
 
 ## Setup
 
+Requires Node.js 22 or newer.
+
 1. Install dependencies:
 ```bash
 npm install

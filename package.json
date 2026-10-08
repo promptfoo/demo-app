@@ -16,5 +16,8 @@
   "dependencies": {
     "express": "^5.0.0",
     "openai": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }
